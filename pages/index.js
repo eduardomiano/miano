@@ -16,7 +16,7 @@ function Index() {
 }
 
 function Contador() {
-    const [contador, setContador] = useState(0)
+    let [contador, setContador] = useState(0)
 
     function addCount() {
         contador += 1;
