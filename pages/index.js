@@ -1,19 +1,45 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../components/layout'
+/* This example requires Tailwind CSS v2.0+ */
+import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 
 function Index() {
 
     return (
-        <>
-            <div>Ola mundo</div>
-            <Contador />
-            <Link href='/about'>
-                <a>About</a>
-            </Link>
-        </>
+        <div className="py-12 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="lg:text-center">
+                    <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">2022</h2>
+                    <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        BTG Pactual Empresas
+                    </p>
+                    <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                        Cronograma
+                    </p>
+                </div>
+
+                <div className="mt-10">
+                    <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                        {features.map((feature) => (
+                            <div key={feature.name} className="relative">
+                                <dt>
+                                    <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                        <feature.icon className="h-6 w-6" aria-hidden="true" />
+                                    </div>
+                                    <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                                </dt>
+                                <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
+            </div>
+        </div>
     )
 }
+
+
 
 function Contador() {
     let [contador, setContador] = useState(0)
@@ -30,7 +56,7 @@ function Contador() {
         setContador(contador)
     }
 
-    debugger
+
 
     return (
         <>
@@ -42,11 +68,62 @@ function Contador() {
 }
 
 Index.getLayout = function getLayout(page) {
-  return (
-    <Layout>
-      {page}
-    </Layout>
-  )
+    return (
+        <Layout>
+            {page}
+        </Layout>
+    )
 }
+
+const features = [
+    {
+        name: 'Banking',
+        description:
+            'Conta corrente, Saldo Remunerado, Cheque Especial, Boletos, etc',
+        icon: GlobeAltIcon,
+    },
+    {
+        name: 'Risco Sacado',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: ScaleIcon,
+    },
+    {
+        name: 'Plataforma',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: LightningBoltIcon,
+    },
+    {
+        name: 'Mobile',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: AnnotationIcon,
+    },
+    {
+        name: 'Plataforma',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: LightningBoltIcon,
+    },
+    {
+        name: 'Mobile',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: AnnotationIcon,
+    },
+    {
+        name: 'Plataforma',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: LightningBoltIcon,
+    },
+    {
+        name: 'Mobile',
+        description:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+        icon: AnnotationIcon,
+    },
+]
 
 export default Index;

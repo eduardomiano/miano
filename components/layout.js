@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import Header from './header'
 
 export default function Layout({ children }) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
         <title>Layouts Example Miano</title>
       </Head>
       <main>
+        <Header />
         {children}
       </main>
     </>
