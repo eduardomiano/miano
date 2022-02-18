@@ -22,7 +22,7 @@ function Index() {
                 <div className="mt-10">
                     <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
                         {features.map((feature) => (
-                            <Link href='/roadmap/[...slug]' as='/roadmap/https://app-rm.roadmunk.com/publish/046b53547f74e473be48014d1628c12f8dfe5424'>
+                            <Link href='/roadmap/[...slug]' as='/roadmap/046b53547f74e473be48014d1628c12f8dfe5424'>
                                 <a>
                                 <div key={feature.name} className="relative">
                                     <dt>
