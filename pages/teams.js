@@ -32,7 +32,7 @@ export default function Teams() {
 
     <Card title='Noteworthy technology acquisitions 2021' details='Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.'
       buttonText='Read more' showButton={true} />
-    <Card title='Miano' details='details......' showButton={false} buttonText='oi' />
+    <Card title='Miano' details={process.env.NEXT_PUBLIC_ANALYTICS_ID} showButton={false} buttonText='oi' />
     <Card title='Miano' details='details......' showButton={true} buttonText='oi'/>
 
   </>

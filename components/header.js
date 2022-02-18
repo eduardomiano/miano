@@ -170,12 +170,12 @@ export default function Header() {
               )}
             </Popover>
 
-            <Link href='about' >
+            <Link href='/about' >
                 <a className="text-base font-medium text-gray-500 hover:text-gray-900">
               About
             </a>
             </Link>
-            <Link href='teams'>
+            <Link href='/teams'>
                 <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
               Time
             </a>
