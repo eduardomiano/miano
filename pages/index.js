@@ -85,43 +85,55 @@ const features = [
     {
         name: 'Risco Sacado',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Quickfin e Integrações de Sacados.',
         icon: ScaleIcon,
     },
     {
-        name: 'Plataforma',
+        name: 'BTG ID',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'BTG ID e Onboarding PJ Unificado',
         icon: LightningBoltIcon,
     },
     {
         name: 'Mobile',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Aplicativo Mobile.',
         icon: AnnotationIcon,
     },
     {
-        name: 'Plataforma',
+        name: 'Billing Fee',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Billing Fee & Rebate.',
         icon: LightningBoltIcon,
     },
     {
-        name: 'Mobile',
+        name: 'Credito',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Capital de Gito, Emprestimos, Agro e Solar.',
         icon: AnnotationIcon,
     },
     {
-        name: 'Plataforma',
+        name: 'Developers',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Automações, Catalogo de APIs.',
         icon: LightningBoltIcon,
     },
     {
-        name: 'Mobile',
+        name: 'Cartões',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'Cartão de Crédtio e Débito.',
+        icon: AnnotationIcon,
+    },
+    {
+        name: 'LATAM',
+        description:
+            'Chile e Colombia.',
+        icon: AnnotationIcon,
+    },
+    {
+        name: 'Atendimento',
+        description:
+            'Portal Admin e Portal de Antedimento.',
         icon: AnnotationIcon,
     },
 ]
