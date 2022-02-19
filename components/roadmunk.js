@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react'
-import { AnnotationIcon, ArrowLeftIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
+import { AnnotationIcon, ArrowLeftIcon, BackspaceIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
 
 function RoadMunk(props) {
 
@@ -11,15 +11,25 @@ function RoadMunk(props) {
     function hideLoading() {
         setIsShow(false)
     }
-
+    
+    /** 
+    // ? isso deveria ser assim?
+    // * esse metodo faz isso.
+    // ! deprected method. do not use! 
+    // todo: eu preciso refatorar isso.
+    // @param xpto abc
+    */
     return (
         <div className="h-screen overflow-y-hidden overflow-x-visible px-1 ">
             <div className='bg-red-900 flex'>
                 <Link href='/'>
                     <a>
-                        <div className="absolute flex items-center justify-center h-6 w-16 rounded-md bg-indigo-500 text-white">
-                            <ArrowLeftIcon className="h-4 w-3" aria-hidden="true" /> back
+                        <div className="absolute flex items-center justify-center h-8 w-8 rounded-md bg-indigo-500 text-white">
+                            <BackspaceIcon className="h-6 w-6" aria-hidden="true" /> 
+                            
                         </div>
+
+
                         
                     </a>
                 </Link>

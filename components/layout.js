@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Script from 'next/script'
 import Header from './header'
 
 export default function Layout({ children }) {
@@ -9,7 +8,7 @@ export default function Layout({ children }) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Layouts Example Miano</title>
+        <title>BTG Empresas - Cronograma 2022</title>
       </Head>
       <main>
         <Header />
