@@ -18,6 +18,11 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Link from 'next/link'
+import {
+  AuthenticatedTemplate,
+  UnauthenticatedTemplate,
+  useMsal,
+} from '@azure/msal-react';
 
 const solutions = [
   {
@@ -81,6 +86,20 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+function SignInButton() {
+  // useMsal hook will return the PublicClientApplication instance you provided to MsalProvider
+  const { instance } = useMsal();
+
+  return <button onClick={() => instance.loginRedirect()}>Sign In</button>;
+}
+
+function WelcomeUser() {
+  const { accounts } = useMsal();
+  const username = accounts[0].username;
+
+  return <p>{username}</p>;
+}
+
 export default function Header() {
 
   return (
@@ -106,8 +125,8 @@ export default function Header() {
             <Popover className="relative">
               {({ open }) => (
                 <>
-                  <Popover.Button 
-                  className={classNames(open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500')} >
+                  <Popover.Button
+                    className={classNames(open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500')} >
                     <span>Todos os Projetos</span>
                     <ChevronDownIcon
                       className={classNames(open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5 group-hover:text-gray-500')}
@@ -169,9 +188,9 @@ export default function Header() {
             <Popover className="relative">
               {({ open }) => (
                 <>
-                  <Popover.Button className={classNames( open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500' )} >
+                  <Popover.Button className={classNames(open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500')} >
                     <span>2021</span>
-                    <ChevronDownIcon className={classNames( open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5 group-hover:text-gray-500' )} aria-hidden="true" />
+                    <ChevronDownIcon className={classNames(open ? 'text-gray-600' : 'text-gray-400', 'ml-2 h-5 w-5 group-hover:text-gray-500')} aria-hidden="true" />
                   </Popover.Button>
 
                   <Transition
@@ -224,17 +243,15 @@ export default function Header() {
             </Popover>
           </Popover.Group>
 
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-              Sign in
-            </a>
-            <a
-              href="#"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Sign up
-            </a>
-          </div>
+          
+          <AuthenticatedTemplate>
+            <WelcomeUser />
+          </AuthenticatedTemplate>
+
+          <UnauthenticatedTemplate>
+            <SignInButton />
+          </UnauthenticatedTemplate>
+
         </div>
       </div>
 
@@ -304,14 +321,8 @@ export default function Header() {
                   href="#"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                 >
-                  Sign up
+                  Sign in
                 </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
-                  </a>
-                </p>
               </div>
             </div>
           </div>
