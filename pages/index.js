@@ -22,6 +22,7 @@ function Index() {
                 <div className="mt-10">
                     <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
                         {features.map((feature) => (
+                            // eslint-disable-next-line react/jsx-key
                             <Link href='/roadmap/[...slug]' as={feature.url}>
                                 <a className='hover:bg-indigo-50'>
                                     <div key={feature.name} className="relative">

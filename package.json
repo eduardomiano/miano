@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build & next export",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.1.0",
     "postcss": "^8.4.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.3.3",
