@@ -24,7 +24,7 @@ function Index() {
                         {features.map((feature) => (
                             // eslint-disable-next-line react/jsx-key
                             <Link href='/roadmap/[...slug]' as={feature.url}>
-                                <a className='hover:bg-indigo-50'>
+                                <a className='hover:bg-indigo-50 p-2'>
                                     <div key={feature.name} className="relative">
                                         <dt>
                                             <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">

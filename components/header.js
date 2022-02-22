@@ -90,7 +90,7 @@ export default function Header() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href='/'>
               <a>
-                <img className="h-20 w-auto" src="../images/BtgPactual-Logo.png" alt="" />
+                <Image src="/images/BtgPactual-Logo.png" alt="Landscape picture" width={120} height={48} />
               </a>
             </Link>
           </div>
